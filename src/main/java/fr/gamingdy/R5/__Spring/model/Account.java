@@ -1,12 +1,12 @@
 package fr.gamingdy.R5.__Spring.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,8 +28,11 @@ public class Account {
 
 	@Setter
 	@Getter
+	@Column(unique = true)
 	private String username;
 
+	@Setter
+	@Getter
 	private String password;
 
 	@Setter
@@ -37,9 +40,20 @@ public class Account {
 	@Enumerated(EnumType.STRING)
 	private Role role;
 
-	@OneToMany()
-	@JoinColumn(name = "post_id")
+	@OneToMany(mappedBy = "author")
+	@Getter
 	private Collection<Post> post;
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Account)) return false;
+		return id != null && id.equals(((Account) o).getId());
+	}
 
+	@Override
+	public int hashCode() {
+		return getClass().hashCode();
+	}
 
 }
