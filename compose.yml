@@ -1,0 +1,19 @@
+services:
+  db:
+    image: mariadb:11.4.2
+    container_name: db-spring
+    env_file:
+      - .db.env
+    ports:
+      - "3306:3306"
+    volumes:
+      - tp-spring:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized" ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  tp-spring:
+    driver: local
