@@ -43,17 +43,6 @@ public class Account {
 	@OneToMany(mappedBy = "author")
 	@Getter
 	private Collection<Post> post;
-	
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof Account)) return false;
-		return id != null && id.equals(((Account) o).getId());
-	}
 
-	@Override
-	public int hashCode() {
-		return getClass().hashCode();
-	}
 
 }

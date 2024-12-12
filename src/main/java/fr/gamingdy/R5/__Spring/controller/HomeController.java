@@ -1,14 +1,13 @@
-package fr.gamingdy.R5.__Spring;
+package fr.gamingdy.R5.__Spring.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class HomeController {
 
-	@GetMapping("/bonjour")
+	@GetMapping("/")
 	public String index() {
-		return "FEUR!";
+		return "Hello World";
 	}
-
 }

@@ -2,7 +2,6 @@ package fr.gamingdy.R5.__Spring.controller;
 
 import fr.gamingdy.R5.__Spring.model.Post;
 import fr.gamingdy.R5.__Spring.repository.PostRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,8 +16,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/post")
 public class PostController {
-	@Autowired
-	private PostRepository postRepository;
+	private final PostRepository postRepository;
+
+	public PostController(PostRepository postRepository) {
+		this.postRepository = postRepository;
+	}
 
 	@GetMapping("/")
 	List<Post> index() {
