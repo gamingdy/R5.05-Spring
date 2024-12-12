@@ -2,7 +2,6 @@ package fr.gamingdy.controller;
 
 import fr.gamingdy.model.Account;
 import fr.gamingdy.repository.AccountRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,8 +16,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/account")
 public class AccountController {
-	@Autowired
 	private AccountRepository accountRepository;
+
+	public AccountController(AccountRepository accountRepository) {
+		this.accountRepository = accountRepository;
+	}
 
 	@PostMapping("/")
 	String create(@RequestBody Account account) {
@@ -34,6 +36,11 @@ public class AccountController {
 	@GetMapping("/")
 	List<Account> index() {
 		return this.accountRepository.findAll();
+	}
+
+	@GetMapping("/{user_id}")
+	Optional<Account> show(@PathVariable Long user_id) {
+		return this.accountRepository.findById(user_id);
 	}
 
 	@DeleteMapping("/{user_id}")
