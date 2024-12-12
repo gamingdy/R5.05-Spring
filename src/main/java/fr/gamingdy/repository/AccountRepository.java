@@ -1,6 +1,6 @@
-package fr.gamingdy.R5.__Spring.repository;
+package fr.gamingdy.repository;
 
-import fr.gamingdy.R5.__Spring.model.Account;
+import fr.gamingdy.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

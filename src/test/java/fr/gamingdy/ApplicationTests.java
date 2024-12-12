@@ -1,4 +1,4 @@
-package fr.gamingdy.R5.__Spring;
+package fr.gamingdy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

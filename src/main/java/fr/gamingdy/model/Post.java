@@ -1,4 +1,4 @@
-package fr.gamingdy.R5.__Spring.model;
+package fr.gamingdy.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

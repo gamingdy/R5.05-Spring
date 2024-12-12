@@ -1,7 +1,7 @@
-package fr.gamingdy.R5.__Spring.controller;
+package fr.gamingdy.controller;
 
-import fr.gamingdy.R5.__Spring.model.Post;
-import fr.gamingdy.R5.__Spring.repository.PostRepository;
+import fr.gamingdy.model.Post;
+import fr.gamingdy.repository.PostRepository;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,7 +1,7 @@
-package fr.gamingdy.R5.__Spring.controller;
+package fr.gamingdy.controller;
 
-import fr.gamingdy.R5.__Spring.model.Account;
-import fr.gamingdy.R5.__Spring.repository.AccountRepository;
+import fr.gamingdy.model.Account;
+import fr.gamingdy.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

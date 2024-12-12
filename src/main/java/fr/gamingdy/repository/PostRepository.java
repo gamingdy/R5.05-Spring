@@ -1,6 +1,6 @@
-package fr.gamingdy.R5.__Spring.repository;
+package fr.gamingdy.repository;
 
-import fr.gamingdy.R5.__Spring.model.Post;
+import fr.gamingdy.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostRepository extends JpaRepository<Post, Long> {

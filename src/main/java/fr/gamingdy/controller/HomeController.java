@@ -1,4 +1,4 @@
-package fr.gamingdy.R5.__Spring.controller;
+package fr.gamingdy.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
