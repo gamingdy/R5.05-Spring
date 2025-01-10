@@ -27,7 +27,7 @@ public class Post {
 	@JoinColumn(name = "author_id")
 	@Setter
 	private Account author;
-
+	
 	@Getter
 	@Setter
 	private String content;

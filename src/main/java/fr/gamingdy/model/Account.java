@@ -43,6 +43,4 @@ public class Account {
 	@OneToMany(mappedBy = "author")
 	@Getter
 	private Collection<Post> post;
-
-
 }

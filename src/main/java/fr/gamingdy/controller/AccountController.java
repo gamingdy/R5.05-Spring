@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/account")
 public class AccountController {
-	private AccountRepository accountRepository;
+	private final AccountRepository accountRepository;
 
 	public AccountController(AccountRepository accountRepository) {
 		this.accountRepository = accountRepository;
